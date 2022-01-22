@@ -1,0 +1,29 @@
+version: "3"
+services:
+  chrome:
+    image: seleniarm/node-chromium:4.1.1-alpha-20220119
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    ports:
+      - "5900:5900"
+
+  firefox:
+    image: seleniarm/node-firefox
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+
+  selenium-hub:
+    image: selenium/hub:4.1.1-20220121
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"

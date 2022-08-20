@@ -7,7 +7,7 @@
         </classes>
     </test>
     <test name="ChromeTest">
-        <parameter name="browser" value= "grid-firefox" />
+        <parameter name="browser" value= "grid-chrome" />
         <classes>
             <class name = "Tests.MainPage" />
         </classes>

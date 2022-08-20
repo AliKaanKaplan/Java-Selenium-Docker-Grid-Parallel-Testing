@@ -13,6 +13,10 @@
         <maven.compiler.target>8</maven.compiler.target>
         <jre.level>1.8</jre.level>
         <jdk.level>1.8</jdk.level>
+        <maven.surfire.version>2.18.1</maven.surfire.version>
+        <testng.version>7.5</testng.version>
+        <selenium.version>4.1.1</selenium.version>
+        <webdrivermanager.version>5.0.3</webdrivermanager.version>
     </properties>
 
     <build>
@@ -30,7 +34,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.18.1</version>
+                <version>${maven.surfire.version}</version>
                 <configuration>
                     <suiteXmlFiles>
                         <!-- TestNG suite XML files -->
@@ -46,20 +50,20 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.1.1</version>
+            <version>${selenium.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.5</version>
+            <version>${testng.version}</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.0.3</version>
+            <version>${webdrivermanager.version}</version>
         </dependency>
     </dependencies>
 </project>
